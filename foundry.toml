@@ -3,4 +3,17 @@ src = 'src'
 out = 'out'
 libs = ['lib']
 
+solc_version = '0.8.19'
+
+[invariant]
+call_override = false  # Override calls
+runs          = 100000    # The number of times to run the invariant tests
+depth         = 1   # The number of calls to make in the invariant tests
+
+[profile.no_revert.invariant]
+fail_on_revert = true  
+
+[profile.allow_revert.invariant]
+fail_on_revert = false 
+
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
