@@ -5,10 +5,24 @@ out/
 # Ignores development broadcast logs
 !/broadcast
 /broadcast/*/31337/
+/broadcast/*/1337/
+/broadcast/*/1/
 /broadcast/**/dry-run/
 
-# Docs
-docs/
+# Ignores deployments
+/deployments/test/1337/*
 
 # Dotenv file
 .env
+
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+cache_hardhat
+artifacts
