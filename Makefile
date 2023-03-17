@@ -1,2 +1,2 @@
 invariant-Dex:
-	forge test --match-path test/Dex.invariants.t.sol -vvvv
+	forge test --match-path test/Dex.invariants.t.sol -vvv
