@@ -11,9 +11,7 @@ import {console} from "@forge-std/console.sol";
 import {Dex, SwappableToken} from "../../src/Dex.sol";
 
 interface IDex {
-
     function token1() external;
-
     function token2() external;
 }
 
@@ -40,7 +38,7 @@ contract Handler is CommonBase, StdCheats, StdUtils {
         dex.swap(address(tokenIn), address(tokenOut), tokenIn.balanceOf(actor));
     }
 
-    function exploit (uint256 token2AmountIn) external {
+    function exploit (uint256 token2AmountIn) external countCall("exploit") {
 
         vm.startPrank(actor);
 
@@ -65,8 +63,7 @@ contract Handler is CommonBase, StdCheats, StdUtils {
     function callSummary() external view {
         console.log("Call summary:");
         console.log("-------------------");
-        console.log("swapFromToken2To1", calls["swapFromToken2To1"]);
-        console.log("swapFromToken1To2", calls["swapFromToken1To2"]);
+        console.log("exploit", calls["exploit"]);
     }
 
     receive() external payable {}
